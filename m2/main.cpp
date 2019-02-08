@@ -2,6 +2,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 #include "mandelbrot.h"
+#include <SDL2/SDL_image.h>
 
 const std::string TITLE = "Tyler Small";
 const std::string NAME = "tsmall";
@@ -55,17 +56,29 @@ int main(void) {
     SDL_RenderClear(renderer);
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
 
+    //class stuff, demonstrate assignment
     Mandelbrot myClass;
     myClass.init(HEIGHT, WIDTH, 12, 3);
     Mandelbrot newClass = myClass;
     newClass.paint(renderer);
     newClass.paintFromPos(renderer, 350, 350);
 
+    //name
     writeName(renderer);
     SDL_RenderPresent(renderer);
     FrameGenerator frameGen(renderer, window, WIDTH, HEIGHT, NAME);
     frameGen.makeFrame();
 
+    //load image
+    SDL_Surface* img = SDL_LoadBMP("fonts/malloyxd.bmp");
+    if (!img) std::cout << "img";
+    SDL_Texture* t = SDL_CreateTextureFromSurface(renderer, img);
+    if (!t) std::cout << "t";
+    SDL_Rect imgRect = {425,525, 190, 190};
+    SDL_RenderCopy(renderer, t, nullptr, &imgRect);
+    SDL_RenderPresent(renderer);
+
+    //event loop
     SDL_Event event;
     const Uint8* keystate;
     while ( true ) {
@@ -77,8 +90,12 @@ int main(void) {
         }
       }
   }
+
+  //free
   SDL_DestroyRenderer(renderer);
   SDL_DestroyWindow(window);
+  SDL_DestroyTexture(t);
+  img = nullptr;
   TTF_Quit(); 
   SDL_Quit();
   }

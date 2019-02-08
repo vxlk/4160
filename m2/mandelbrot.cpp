@@ -48,8 +48,11 @@ void Mandelbrot::paint(SDL_Renderer* renderer)
                 if (abs(z) > 2.0) break;
                 ++i;
             }
-        
-            SDL_SetRenderDrawColor(renderer, palette[i][0], palette[i][1], palette[i][2], 0xff);
+            if (!palette[i][0] && !palette[i][1] && !palette[i][2])
+                SDL_SetRenderDrawColor(renderer, palette[i][0], palette[i][1], palette[i][2], SDL_ALPHA_TRANSPARENT);
+            
+            else
+                SDL_SetRenderDrawColor(renderer, palette[i][0], palette[i][1], palette[i][2], SDL_ALPHA_OPAQUE);
             SDL_RenderDrawPoint(renderer, x, y);
         }
 }
@@ -71,8 +74,10 @@ void Mandelbrot::paintFromPos(SDL_Renderer* renderer, int _x, int _y)
                 if (abs(z) > 2.0) break;
                 ++i;
             }
-        
-            SDL_SetRenderDrawColor(renderer, palette[i][0], palette[i][1], palette[i][2], 0xff);
+            if (!palette[i][0] && !palette[i][1] && !palette[i][2])
+                SDL_SetRenderDrawColor(renderer, palette[i][0], palette[i][1], palette[i][2], 0);
+            else
+            SDL_SetRenderDrawColor(renderer, palette[i][0], palette[i][1], palette[i][2], 255);
             SDL_RenderDrawPoint(renderer, x, y);
         }
 }
@@ -86,7 +91,7 @@ const Mandelbrot& Mandelbrot::operator=(const Mandelbrot& that)
     return *this;
 }
 
-Mandelbrot::Mandelbrot(const Mandelbrot& that)
+Mandelbrot::Mandelbrot(const Mandelbrot& that) : palette(nullptr)
 {
     this->init(that.Width, 
                that.Height, 

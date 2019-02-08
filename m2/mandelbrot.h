@@ -14,7 +14,7 @@ class Mandelbrot
     
 public:
 
-    Mandelbrot() {}
+    Mandelbrot() : palette(nullptr) {}
 
     //rule of 3
     ~Mandelbrot();
