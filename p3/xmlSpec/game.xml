@@ -1,0 +1,113 @@
+<?xml version = "1.0"?>
+<GameData>
+<!-- screenTitle is also used to identify you and your animation. 
+     So make sure to include your name as part of the screenTitle -->
+<title>Tyler Small</title>
+<maxStringSize>50</maxStringSize>
+
+<frameCapOn>false</frameCapOn>
+<period>17</period>
+
+<maxFrames>300</maxFrames>
+<username>tsmall</username>
+
+<view>
+  <width>800</width>
+  <height>980</height>
+  <loc x="30" y="30"/>
+</view>
+
+<world>
+  <width>1625</width>
+  <height>980</height>
+</world>
+
+<back>
+  <file>assets/map.png</file>
+  <factor>2</factor>
+  <transparency>false</transparency>
+</back>
+
+<clouds>
+  <file>assets/clouds.png</file>
+  <factor>1</factor>
+  <transparency>true</transparency>
+</clouds>
+
+<font name="font">
+  <file>fonts/arial.ttf</file>
+  <size>24</size>
+  <red>255</red>
+  <green>255</green>
+  <blue>0</blue>
+  <alpha>0</alpha>
+</font>
+
+<ui>
+  <name>"Tyler Small"</name>
+  <red>90</red>
+  <green>160</green>
+  <blue>100</blue>
+  <alpha>255</alpha>
+</ui>
+
+<SpinningStar>
+  <file>assets/sniper.png</file>
+  <startLoc x="50" y="140"/>
+  <frames>1</frames>
+  <frameInterval>50</frameInterval>
+  <speedX>200</speedX>
+  <speedY>200</speedY>
+  <transparency>true</transparency>
+</SpinningStar>
+
+<AnimationF>
+  <file>assets/megamanA.png</file>
+  <startLoc x="50" y="140"/>
+  <frames>10</frames>
+  <frameInterval>50</frameInterval>
+  <speedX>200</speedX>
+  <speedY>200</speedY>
+  <transparency>true</transparency>
+</AnimationF>
+
+<AnimationB>
+  <file>assets/megamanB.png</file>
+  <startLoc x="50" y="140"/>
+  <frames>10</frames>
+  <frameInterval>50</frameInterval>
+  <speedX>200</speedX>
+  <speedY>200</speedY>
+  <transparency>true</transparency>
+</AnimationB>
+
+<Sniper>
+  <file>assets/sniper.png</file>
+  <startLoc x="50" y="140"/>
+  <frames>1</frames>
+  <frameInterval>50</frameInterval>
+  <speedX>200</speedX>
+  <speedY>200</speedY>
+  <transparency>true</transparency>
+</Sniper>
+
+<Tank>
+  <file>assets/tank.png</file>
+  <startLoc x="50" y="140"/>
+  <frames>1</frames>
+  <frameInterval>50</frameInterval>
+  <speedX>200</speedX>
+  <speedY>200</speedY>
+  <transparency>true</transparency>
+</Tank>
+
+
+<YellowStar>
+  <file>assets/tank.png</file>
+  <startLoc x="227" y="240"/>
+  <speedX>300</speedX>
+  <speedY>300</speedY>
+  <transparency>true</transparency>
+</YellowStar>
+
+</GameData>
