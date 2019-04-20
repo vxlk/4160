@@ -4,13 +4,14 @@
 template <typename T>
 T Pool<T>::getFromPool() noexcept
 {
-    if ((int)this->pool.size() == 0) 
+    if (this->pool.empty()) 
     {
         T newObj(objName);
         pool.emplace_back(newObj);
+		return pool[index];
     }
     
-    if (index == (int)this->pool.size()-1)
+    if (index == 0)
     {
         T newObj(objName);
         pool.emplace_back(newObj);

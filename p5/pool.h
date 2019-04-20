@@ -7,7 +7,7 @@ template <typename T>
 class Pool
 {
     std::vector<T> pool;
-    int index;
+    unsigned long int index;
     std::string objName;
 public:
 
@@ -17,8 +17,8 @@ public:
 
     void addBack(T) noexcept;
 
-    inline int getIndex() const noexcept { return this->index; }
-    inline int getSize() const noexcept { return (int)this->pool.size()-1; }
+    inline constexpr int getIndex() const noexcept { return this->index; }
+    inline constexpr int getSize() const noexcept { return (int)this->pool.size(); }
 
 };
 #endif

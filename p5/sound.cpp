@@ -21,9 +21,9 @@ SDLSound::SDLSound() :
   volume(SDL_MIX_MAXVOLUME), 
   currentSound(-1), 
   music(NULL),
-  audioRate(246000), //22050 
+  audioRate(22050), //22050 
   audioChannels(2), 
-  audioBuffers(8126), //4096
+  audioBuffers(4096), //4096
   sounds(),
   channels() 
 {
